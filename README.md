@@ -6,4 +6,4 @@ Integrantes:
 
 • Kevin Alexis Lorza -
 
-• Juan David Perez Valencia -
+• Juan David Perez Valencia - 2266289
