@@ -2,7 +2,6 @@ public class Candidato extends Ciudadano{
     private boolean derecha;
     private Partido partido_politico;
     private String propuestas;
-
     public Candidato(String nombre, String identificacion, Ciudades ciudad_origen, boolean derecha,
             Partido partido_politico, String propuestas) {
         super(nombre, identificacion, ciudad_origen);
