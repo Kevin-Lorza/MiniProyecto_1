@@ -2,6 +2,12 @@ public class Ciudadano {
     private String nombre;
     private String identificacion;
     private Ciudades ciudad_origen;
+
+    public Ciudadano(String nombre, String identificacion, Ciudades ciudad_origen) {
+        this.nombre = nombre;
+        this.identificacion = identificacion;
+        this.ciudad_origen = ciudad_origen;
+    }
     
     public String getNombre() {
         return nombre;
