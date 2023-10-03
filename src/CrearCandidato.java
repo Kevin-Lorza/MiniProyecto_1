@@ -2,14 +2,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CrearCandidato{
-    public static void candidatoC(String[] args) throws Exception {
+    public static void candidatoC(String[] args) throws Exception{
         ArrayList <Candidato> lista= new ArrayList<Candidato>(); 
         while(true){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Ingresa el nombbre: ");
             String nombreWhile = scanner.next();
+            
             System.out.println("ingrese la Identificación: ");
             String identificacion = scanner.next();
+            
             System.out.println("Estas son las ciudades: ");
             System.out.println("1.Cali       2.Buenaventura    3.Palmira    4.Tulua");
             System.out.println("5.Jamundi    6.Cartago         7.Zarzal     8.Candelaria");
@@ -22,6 +24,7 @@ public class CrearCandidato{
             do{
                 System.out.println("ingrese el número de su ciudad de origen: ");
                 variableswitch3 = scanner.nextInt();
+                
                 switch(variableswitch3){
                     case 1: ciudad = "Cali";break;
                     case 2: ciudad = "Buenaventura";break;
@@ -49,6 +52,7 @@ public class CrearCandidato{
             }while(variableswitch3 < 1 || variableswitch3 >21 );       
             System.out.println("ingrese 0 si es de derecha o 1 si es de Izquierda: ");
             Integer posi = scanner.nextInt();
+            
             Boolean posicion = false;
             String PartidoCan = null;
             if(posi == 0){
@@ -58,6 +62,7 @@ public class CrearCandidato{
                 System.out.println("2. "+Partido.Centro_democratico);
                 System.out.println("3. "+Partido.Partido_cambio_radical);
                 int variableswitch = scanner.nextInt(); 
+                
                 switch(variableswitch){
                     case 1: PartidoCan = "Conservador";break;
                     case 2: PartidoCan = "Centro_democratico";break;
@@ -72,6 +77,7 @@ public class CrearCandidato{
                 System.out.println("1. "+Partido.Liberal);
                 System.out.println("2. "+Partido.Alianza_verde);
                 int variableswitch2 = scanner.nextInt();
+                
                 switch(variableswitch2){
                     case 1: PartidoCan = "Liberal";break;
                     case 2: PartidoCan = "Alianza_verde";break;
@@ -80,6 +86,7 @@ public class CrearCandidato{
             }
             System.out.println("ingrese sus propuestas de campaña: ");
             String propuestas = scanner.next();
+            
             Ciudades ciu = Ciudades.valueOf(ciudad);
             Partido part = Partido.valueOf(PartidoCan);
         
@@ -88,9 +95,18 @@ public class CrearCandidato{
             System.out.println(candidato.getNombre());
             System.out.println("si desea salir, ingrese 0: ");
             int continuar = scanner.nextInt();
-            if(continuar==0)
+            
+
+            if(continuar==0){
+                MenuCandidato.menuCandidato(args);  
+                break;  
+
+            }else if(continuar!=0) 
+                CrearCandidato.candidatoC(args);
                 break;
+               
         }
+        
         lista.forEach((i) ->{
             System.out.println(i.getNombre());            
             System.out.println(i.getIdentificacion());            
@@ -99,5 +115,7 @@ public class CrearCandidato{
             System.out.println(i.getPartido_politico());            
             System.out.println(i.getPropuestas());            
         });
+        
     }
+    
 }
