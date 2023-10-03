@@ -106,7 +106,6 @@ public class CrearCandidato{
                 break;
                
         }
-        
         lista.forEach((i) ->{
             System.out.println(i.getNombre());            
             System.out.println(i.getIdentificacion());            
@@ -115,7 +114,9 @@ public class CrearCandidato{
             System.out.println(i.getPartido_politico());            
             System.out.println(i.getPropuestas());            
         });
-        
     }
     
+    public static void mostrarC(ArrayList lista){
+        
+    }
 }

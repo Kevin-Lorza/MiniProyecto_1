@@ -19,10 +19,9 @@ public class MenuCandidato{
         
         switch(opcion){
             case 1:
-            CrearCandidato.candidatoC(args);
+                CrearCandidato.candidatoC(args);
                 break;
             case 2:
-                System.out.println("como");
                 break;
             case 3:
                 System.out.println("estas");
