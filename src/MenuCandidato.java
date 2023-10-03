@@ -1,13 +1,13 @@
 import java.util.Scanner;
+    
+public class MenuCandidato{
 
-public class MenuCandidato {
-
-    static void menuCandidato(){
+    static void menuCandidato(String[] args) throws Exception{
         Scanner sn = new Scanner(System.in);
         Boolean salir = false;
         int opcion;
         while(!false){
-        System.out.println("Menu candidatos\n");
+        System.out.println("\nMenu candidatos\n");
         System.out.println("1- Crear un candidato.");
         System.out.println("2- Ver los candidatos.");
         System.out.println("3- Editar un candidato.");
@@ -16,9 +16,10 @@ public class MenuCandidato {
 
         System.out.print("\nPor favor seleccione una opcion: ");
         opcion = sn.nextInt();
+        
         switch(opcion){
             case 1:
-                System.out.println("hola");
+            CrearCandidato.candidatoC(args);
                 break;
             case 2:
                 System.out.println("como");
@@ -37,7 +38,9 @@ public class MenuCandidato {
 
         }
 
-
-        }
+        sn.close();
+        }  
     }
+
+
 }
