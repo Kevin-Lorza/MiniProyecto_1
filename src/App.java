@@ -32,6 +32,7 @@ public class App {
                 break;
         }
         }while(opcion2!=4);
+        
     }
 
     static void menuCandidato(String[] args) throws Exception{
@@ -75,6 +76,7 @@ public class App {
 
         }
         }while(opcion2!=6);
+        
     }
 
 }
