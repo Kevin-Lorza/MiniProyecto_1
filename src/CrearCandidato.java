@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CrearCandidato{
-    public static void candidatoC(String[] args) throws Exception{
-        ArrayList <Candidato> lista= new ArrayList<Candidato>(); 
+    public static ArrayList<Candidato> candidatoC(String[] args) throws Exception{
+        ArrayList<Candidato> lista= new ArrayList<Candidato>(); 
         while(true){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Ingresa el nombbre: ");
@@ -98,25 +98,23 @@ public class CrearCandidato{
             
 
             if(continuar==0){
-                App.menuCandidato(args);
-                break;  
-
-            }else if(continuar!=0) 
-                CrearCandidato.candidatoC(args);
                 break;
-               
+            }      
         }
-        lista.forEach((i) ->{
+        return lista;
+    }
+    
+    public static void mostrarC(ArrayList<Candidato> lista2){
+        lista2.forEach((i) ->{
+            System.out.println("------------------------------------------------------------");
             System.out.println(i.getNombre());            
             System.out.println(i.getIdentificacion());            
             System.out.println(i.getCiudad_origen());            
             System.out.println(i.isDerecha());            
             System.out.println(i.getPartido_politico());            
-            System.out.println(i.getPropuestas());            
+            System.out.println(i.getPropuestas()); 
+            System.out.println("\n");           
         });
-    }
-    
-    public static void mostrarC(ArrayList lista){
-        
+        System.out.println(lista2);
     }
 }
