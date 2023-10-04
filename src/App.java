@@ -26,8 +26,10 @@ public class App {
                 case 3:
                     System.out.println("aqui van las estadisticas");
                     break;
+                case 4: break;
                 default:
-                    System.out.println("adios");
+                    {System.out.println("adios");}
+                break;
         }
         }while(opcion2!=4);
     }
@@ -35,7 +37,8 @@ public class App {
     static void menuCandidato(String[] args) throws Exception{
         
         Scanner sn = new Scanner(System.in);
-        int opcion;
+        int opcion2;
+        ArrayList<Candidato> lista2 = new ArrayList<Candidato>();
         do{
         System.out.println("\nMenu candidatos\n");
         System.out.println("1- Crear un candidato.");
@@ -46,11 +49,11 @@ public class App {
         System.out.println("6- Volver.");
 
         System.out.print("\nPor favor seleccione una opcion: ");
-        opcion = sn.nextInt();
-        ArrayList<Candidato> lista2 = CrearCandidato.candidatoC(args);
-        switch(opcion){
+        opcion2 = sn.nextInt();
+
+        switch(opcion2){
             case 1:
-                CrearCandidato.candidatoC(args);
+                lista2 = CrearCandidato.candidatoC(args);
                 break;
             case 2:
                 CrearCandidato.mostrarC(lista2);
@@ -65,15 +68,13 @@ public class App {
                 System.out.println("amigo");
                 break;
             case 6:
-                App.main(args);
                 break;
             default:
-                System.out.println("ddigitaste algo mal vuelve a intentarlo");
+                {System.out.println("digitaste algo mal vuelve a intentarlo");}
+            break;
 
         }
-
-        sn.close();
-        }while(opcion!=6);
+        }while(opcion2!=6);
     }
 
 }
