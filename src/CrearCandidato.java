@@ -98,7 +98,7 @@ public class CrearCandidato{
             
 
             if(continuar==0){
-                MenuCandidato.menuCandidato(args);  
+                App.menuCandidato(args);
                 break;  
 
             }else if(continuar!=0) 
