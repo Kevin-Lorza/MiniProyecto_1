@@ -9,10 +9,10 @@ public class CrearCandidato{
         while(salir){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Ingresa el nombre: ");
-            String nombreWhile = scanner.next();
+            String nombreWhile = scanner.nextLine();
             
             System.out.println("ingrese la Identificación: ");
-            String identificacion = scanner.next();
+            String identificacion = scanner.nextLine();
             
             System.out.println("Estas son las ciudades: ");
             System.out.println("1.Cali       2.Buenaventura    3.Palmira    4.Tulua");
@@ -87,7 +87,8 @@ public class CrearCandidato{
                 }
             }
             System.out.println("ingrese sus propuestas de campaña: ");
-            String propuestas = scanner.next();
+            scanner.nextLine();
+            String propuestas = scanner.nextLine();
             
             Ciudades ciu = Ciudades.valueOf(ciudad);
             Partido part = Partido.valueOf(PartidoCan);
