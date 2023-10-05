@@ -54,10 +54,10 @@ public class App {
 
         switch(opcion2){
             case 1:
-                lista2 = CrearCandidato.candidatoC(args);
+                CrearCandidato.candidatoC(args);
                 break;
             case 2:
-                CrearCandidato.mostrarC(lista2);
+                CrearCandidato.mostrarC(CrearCandidato.lista);
                 break;
             case 3:
                 System.out.println("estas");

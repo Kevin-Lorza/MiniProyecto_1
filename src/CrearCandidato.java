@@ -3,8 +3,10 @@ import java.util.Scanner;
 
 public class CrearCandidato{
 
-    public static ArrayList<Candidato> candidatoC(String[] args) throws Exception{
-        ArrayList<Candidato> lista= new ArrayList<Candidato>();
+    static ArrayList<Candidato> lista= new ArrayList<Candidato>();
+
+    public static void candidatoC(String[] args) throws Exception{
+        
         boolean salir = true; 
         while(salir){
             Scanner scanner = new Scanner(System.in);
@@ -115,7 +117,6 @@ public class CrearCandidato{
             if(continuar==0)
                 salir = false;
         }
-        return lista;
     }         
     
     public static void mostrarC(ArrayList<Candidato> lista2){
