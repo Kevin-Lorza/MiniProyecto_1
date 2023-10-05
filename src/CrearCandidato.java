@@ -13,87 +13,101 @@ public class CrearCandidato{
             
             System.out.println("ingrese la Identificación: ");
             String identificacion = scanner.nextLine();
-            
-            System.out.println("Estas son las ciudades: ");
-            System.out.println("1.Cali       2.Buenaventura    3.Palmira    4.Tulua");
-            System.out.println("5.Jamundi    6.Cartago         7.Zarzal     8.Candelaria");
-            System.out.println("9.Pradera    10.Ginebra        11.Cerrito   12.Roldanillo");
-            System.out.println("13.La union  14.Sevilla        15.Buga      16.Guacari");
-            System.out.println("17.Rozo      18.Caicedonia     19.Yumbo     20.Florida");
-            System.out.println("21.Dagua");
+            Ciudades ciudades[] = Ciudades.values();
+
+            System.out.println("Estas son las ciudades: ");            
+            for(Integer i=1; i <= ciudades.length ; i++){
+                if (((i+1)%4)==0){
+                System.out.print(i.toString() + ". " + ciudades[i-1] + "  \n" );
+            }else {
+                System.out.print(i.toString() + ". " + ciudades[i-1] + "       " );
+            }
+            }
+            System.out.println();
+
             int variableswitch3;
-            String ciudad = ""; 
+            Ciudades ciudad = null; 
             do{
                 System.out.println("ingrese el número de su ciudad de origen: ");
                 variableswitch3 = scanner.nextInt();
                 
                 switch(variableswitch3){
-                    case 1: ciudad = "Cali";break;
-                    case 2: ciudad = "Buenaventura";break;
-                    case 3: ciudad = "Palmira";break;
-                    case 4: ciudad = "Tulua";break;
-                    case 5: ciudad = "Jamundi";break;
-                    case 6: ciudad = "Cartago";break;
-                    case 7: ciudad = "Zarzal";break;
-                    case 8: ciudad = "Candelaria";break;
-                    case 9: ciudad = "Pradera";break;
-                    case 10: ciudad = "Ginebra";break;
-                    case 11: ciudad = "Cerrito";break;
-                    case 12: ciudad = "Roldanillo";break;
-                    case 13: ciudad = "Launion";break;
-                    case 14: ciudad = "Sevilla";break;
-                    case 15: ciudad = "Buga";break;
-                    case 16: ciudad = "Guacari";break;
-                    case 17: ciudad = "Rozo";break;
-                    case 18: ciudad = "Caicedonia";break;
-                    case 19: ciudad = "Yumbo";break;
-                    case 20: ciudad = "Florida";break;
-                    case 21: ciudad = "Dagua";break;
+                    case 1: ciudad = Ciudades.Cali;break;
+                    case 2: ciudad = Ciudades.Buenaventura;break;
+                    case 3: ciudad = Ciudades.Palmira;break;
+                    case 4: ciudad = Ciudades.Tulua;break;
+                    case 5: ciudad = Ciudades.Jamundi;break;
+                    case 6: ciudad = Ciudades.Cartago;break;
+                    case 7: ciudad = Ciudades.Zarzal;break;
+                    case 8: ciudad = Ciudades.Candelaria;break;
+                    case 9: ciudad = Ciudades.Pradera;break;
+                    case 10: ciudad = Ciudades.Ginebra;break;
+                    case 11: ciudad = Ciudades.Cerrito;break;
+                    case 12: ciudad = Ciudades.Roldanillo;break;
+                    case 13: ciudad = Ciudades.Launion;break;
+                    case 14: ciudad = Ciudades.Sevilla;break;
+                    case 15: ciudad = Ciudades.Buga;break;
+                    case 16: ciudad = Ciudades.Guacari;break;
+                    case 17: ciudad = Ciudades.Rozo;break;
+                    case 18: ciudad = Ciudades.Caicedonia;break;
+                    case 19: ciudad = Ciudades.Yumbo;break;
+                    case 20: ciudad = Ciudades.Florida;break;
+                    case 21: ciudad = Ciudades.Dagua;break;
                     default: System.out.println("Digite algo válido");
                 }
-            }while(variableswitch3 < 1 || variableswitch3 >21 );       
-            System.out.println("ingrese 0 si es de derecha o 1 si es de Izquierda: ");
-            Integer posi = scanner.nextInt();
+            }while(variableswitch3 < 1 || variableswitch3 >21 );  
             
             Boolean posicion = false;
-            String PartidoCan = null;
-            if(posi == 0){
-                posicion = true; /* se le asigna true cuando el candidato es de derecha */
-                System.out.println("Estos son los partidos de derecha: ");
-                System.out.println("1. "+Partido.Conservador);
-                System.out.println("2. "+Partido.Centro_democratico);
-                System.out.println("3. "+Partido.Partido_cambio_radical);
-                int variableswitch = scanner.nextInt(); 
-                
-                switch(variableswitch){
-                    case 1: PartidoCan = "Conservador";break;
-                    case 2: PartidoCan = "Centro_democratico";break;
-                    case 3: PartidoCan = "Partido_cambio_radical";break;
-                    default: break;
-                }
+            Partido PartidoCan = null;
+            int posi;
 
-            }
-            else if(posi == 1){
-                posicion = false; /* se le asigna false cuando el candidato es de izquierda */
-                System.out.println("Estos son los partidos de izquierda: ");
-                System.out.println("1. "+Partido.Liberal);
-                System.out.println("2. "+Partido.Alianza_verde);
-                int variableswitch2 = scanner.nextInt();
+            do {
+                System.out.println("ingrese 0 si es de derecha o 1 si es de Izquierda: ");
+                posi = scanner.nextInt();
+                if(posi == 0){
+                posicion = true; /* se le asigna true cuando el candidato es de derecha */
+                int variableswitch;
+                do {
+                    System.out.println("Estos son los partidos de derecha: ");
+                    System.out.println("1. "+Partido.Conservador);
+                    System.out.println("2. "+Partido.Centro_democratico);
+                    System.out.println("3. "+Partido.Partido_cambio_radical);
+
+                    variableswitch = scanner.nextInt(); 
+                    switch(variableswitch){
+                    case 1: PartidoCan = Partido.Conservador;break;
+                    case 2: PartidoCan = Partido.Centro_democratico;break;
+                    case 3: PartidoCan = Partido.Partido_cambio_radical;break;
+                    default: System.out.println("Digíte un dato válido");break;
+                    }
                 
-                switch(variableswitch2){
-                    case 1: PartidoCan = "Liberal";break;
-                    case 2: PartidoCan = "Alianza_verde";break;
-                    default: break;
-                }
-            }
+                } while (variableswitch < 1 || variableswitch > 3 );
+                }         
+                else if(posi == 1){
+                    posicion = false; /* se le asigna false cuando el candidato es de izquierda */
+                    int variableswitch2;
+                    do {
+                        System.out.println("Estos son los partidos de izquierda: ");
+                        System.out.println("1. "+Partido.Liberal);
+                        System.out.println("2. "+Partido.Alianza_verde);
+                        variableswitch2 = scanner.nextInt();
+                        
+                        switch(variableswitch2){
+                        case 1: PartidoCan = Partido.Liberal;break;
+                        case 2: PartidoCan = Partido.Alianza_verde;break;
+                        default: System.out.println("Digíte un dato válido");break;
+                    }
+                    } while (variableswitch2 < 1 || variableswitch2 > 2);
+                    
+                }else System.out.println("Dígite un numero válido");
+                
+            } while (posi > 1 || posi < 0);
+            
             System.out.println("ingrese sus propuestas de campaña: ");
             scanner.nextLine();
             String propuestas = scanner.nextLine();
-            
-            Ciudades ciu = Ciudades.valueOf(ciudad);
-            Partido part = Partido.valueOf(PartidoCan);
         
-            Candidato candidato = new Candidato(nombreWhile, identificacion, ciu , posicion, part, propuestas);
+            Candidato candidato = new Candidato(nombreWhile, identificacion, ciudad , posicion, PartidoCan, propuestas);
             lista.add(candidato);
             System.out.println("si desea salir, ingrese 0: ");
             int continuar = scanner.nextInt();
